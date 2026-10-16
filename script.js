@@ -142,4 +142,66 @@
             document.addEventListener('touchstart', start, { once: true });
         });
 
+    /* ─────────────────────────────────────────────
+       VIEWS COUNTER (Guns.lol style)
+       ───────────────────────────────────────────── */
+    const viewsEl = document.getElementById('views-count');
+
+    function animateCount(target) {
+        if (!viewsEl) return;
+        const current = parseInt(viewsEl.textContent, 10) || 0;
+        const duration = 700;
+        const start = performance.now();
+
+        function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 4);
+            const val = Math.round(current + (target - current) * ease);
+            viewsEl.textContent = val.toLocaleString();
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                viewsEl.textContent = target.toLocaleString();
+            }
+        }
+        requestAnimationFrame(update);
+    }
+
+    function initViews() {
+        if (!viewsEl) return;
+        const key = 'sxsouzaxx_landing';
+        const hasVisited = localStorage.getItem('has_viewed_' + key);
+        const endpoint = hasVisited
+            ? `https://countapi.mileshilliard.com/api/v1/get/${key}`
+            : `https://countapi.mileshilliard.com/api/v1/hit/${key}`;
+
+        fetch(endpoint)
+            .then(res => res.json())
+            .then(data => {
+                if (data && typeof data.value === 'number') {
+                    localStorage.setItem('has_viewed_' + key, 'true');
+                    localStorage.setItem('last_views_' + key, data.value);
+                    animateCount(data.value);
+                } else {
+                    fallbackViews();
+                }
+            })
+            .catch(() => {
+                fallbackViews();
+            });
+
+        function fallbackViews() {
+            const saved = parseInt(localStorage.getItem('last_views_' + key), 10);
+            if (!isNaN(saved) && saved > 0) {
+                animateCount(saved);
+            } else {
+                animateCount(1);
+            }
+        }
+    }
+
+    initViews();
+
 })();
+
