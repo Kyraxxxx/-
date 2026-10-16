@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>sxsouzaxx</title>
+    <link rel="icon" type="image/jpeg" href="fav.jpg">
+    <link rel="shortcut icon" href="fav.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="grain"></div>
+
+    <!-- PLAYER — canto inferior esquerdo -->
+    <div class="player-corner" id="player-corner">
+
+        <!-- Disco girando -->
+        <div class="vinyl-wrap">
+            <div class="vinyl-disc" id="vinyl-disc">
+                <img src="disco.png" alt="album" class="disc-art">
+                <div class="disc-hole"></div>
+                <!-- reflexo giratório -->
+                <div class="disc-shine"></div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="player-controls">
+            <button id="btn-play" class="ctrl" title="Play/Pause">
+                <svg id="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+                <svg id="icon-pause" class="hidden" viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16"/><rect x="15" y="4" width="4" height="16"/></svg>
+            </button>
+
+            <button id="btn-mute" class="ctrl" title="Mute">
+                <svg id="icon-vol" viewBox="0 0 24 24"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M15.54,8.46a5,5,0,0,1,0,7.07"/></svg>
+                <svg id="icon-muted" class="hidden" viewBox="0 0 24 24"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+            </button>
+
+            <input type="range" id="vol" min="0" max="1" step="0.01" value="0.8" title="Volume">
+        </div>
+
+        <input type="range" id="prog" class="prog-bar" min="0" max="100" step="0.1" value="0" title="Progresso">
+        <span class="track-label">21 Anos — Gyylo</span>
+    </div>
+
+    <!-- BIO CARD -->
+    <main class="bio-wrap">
+        <div class="bio-card">
+
+            <div class="avatar-wrap">
+                <img src="icon.gif" alt="avatar" class="avatar">
+            </div>
+
+            <h1 class="handle">sxsouzaxx</h1>
+
+            <nav class="links-nav">
+
+                <a href="https://www.instagram.com/sxsouzaxx/" target="_blank" class="link-row">
+                    <span class="link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span class="link-name">Instagram</span>
+                    <span class="link-sub">@sxsouzaxx</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+
+                <a href="https://github.com/Kyraxxxx" target="_blank" class="link-row">
+                    <span class="link-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                    </span>
+                    <span class="link-name">GitHub</span>
+                    <span class="link-sub">Kyraxxxx</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+
+                <a href="https://guns.lol/nero.7" target="_blank" class="link-row">
+                    <span class="link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+                        </svg>
+                    </span>
+                    <span class="link-name">Guns.lol</span>
+                    <span class="link-sub">nero.7</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+
+                <a href="https://discord.gg/SbSDCBN5N" target="_blank" class="link-row discord-btn">
+                    <span class="link-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </span>
+                    <span class="link-name">Discord</span>
+                    <span class="link-sub">Entrar no Servidor</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">Feito Por Nero &mdash; 2026 &bull; Todos os Direitos Reservados</footer>
+
+    <div class="toast hidden" id="toast"></div>
+
+    <audio id="audio" src="21anos.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
